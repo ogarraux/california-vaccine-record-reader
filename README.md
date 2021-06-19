@@ -9,12 +9,10 @@ The QR code uses the SMART Health Card (https://smarthealth.cards/) format, whic
 
 ## Usage
 0. Obtain your vaccine record from the California Department of Public Health: https://myvaccinerecord.cdph.ca.gov/.  Save the QR code image.
-1. Setup Python environment.  virtualenv venv; source venv/bin/activate; pip install -r requirements.txt
-2. ./ca-health-card-to-text.py <path to the saved QR code image>
+1. Setup Python environment:  virtualenv venv; source venv/bin/activate; pip install -r requirements.txt
+2. Run script: ./ca-health-card-to-text.py <path to the saved QR code image>
 
-
-Note: The Smart Health Card QR codes contain data, and a signature to verify the data is correct.  This script just displays the data - it does not attempt to validate it.  So, if you wanted to actually validate a health card, you would need to do more than this.
-
+Note: The Smart Health Card QR codes contain data and a signature to verify the data is correct.  This script just displays the data - it does not attempt to validate it.  So, if you wanted to actually validate a health card, this would be insufficient.
 
 ## So what *is* stored in the QR code after all? 
 Slightly more information than the vaccine record page shows in text, but nothing super exciting:
@@ -22,4 +20,4 @@ Slightly more information than the vaccine record page shows in text, but nothin
 - Name
 - Birthdate
 - Covid vaccine dates, lot numbers, and who gave you the vaccine (just CVS Pharmacy for mine, not the specific location or person).
-- Interestingly, it did not spell out the actual name of the vaccine for me - it just gave a numeric vaccine code.  This CDC page shows what vaccine each of the codes refer to: https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html
+- Interestingly, for me the actual name of the vaccine was not in the QR code - just a numeric vaccine code.  This CDC page shows what vaccine each of the codes refer to: https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html

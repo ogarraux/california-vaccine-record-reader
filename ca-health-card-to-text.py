@@ -33,7 +33,7 @@ def jws_to_json(jws_string):
     jws_list = jws_string.split(".")
     decoded_data = base64.urlsafe_b64decode(jws_list[1] + "=")
     
-    # wbits -15 tells zlib that this is a "raw" deflate compression (which has no headers)
+    # wbits -15 tells zlib that this uses "raw" deflate compression (which has no headers)
     decompressed_data = zlib.decompress(decoded_data, wbits=-15)
     return decompressed_data
 
